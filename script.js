@@ -1,73 +1,66 @@
-/* =====================================================
+/* ========================================
    MARTE: UM NOVO LAR
-   JAVASCRIPT PRINCIPAL
-===================================================== */
+   FUNCIONALIDADES JAVASCRIPT
+======================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =================================================
-       MENU RESPONSIVO
-    ================================================= */
+    // ========================================
+    // MENU RESPONSIVO
+    // ========================================
 
     const menuToggle = document.getElementById("menuToggle");
-    const nav = document.getElementById("nav");
+    const navMenu = document.getElementById("navMenu");
 
     menuToggle.addEventListener("click", () => {
-
-        const isOpen = nav.classList.toggle("active");
-
-        menuToggle.classList.toggle("active");
+        const isOpen = navMenu.classList.toggle("active");
 
         menuToggle.setAttribute("aria-expanded", isOpen);
 
+        menuToggle.classList.toggle("active", isOpen);
     });
 
     // Fecha o menu ao clicar em um link
-    document.querySelectorAll(".nav a").forEach(link => {
+    const navLinks = document.querySelectorAll(".nav-menu a");
 
+    navLinks.forEach(link => {
         link.addEventListener("click", () => {
-
-            nav.classList.remove("active");
-            menuToggle.classList.remove("active");
+            navMenu.classList.remove("active");
             menuToggle.setAttribute("aria-expanded", "false");
-
         });
-
     });
 
 
-    /* =================================================
-       ANIMAÇÕES AO APARECER NA TELA
-    ================================================= */
+    // ========================================
+    // ROLAGEM SUAVE
+    // ========================================
 
-    const revealElements = document.querySelectorAll(".reveal");
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-    const revealObserver = new IntersectionObserver((entries) => {
+        link.addEventListener("click", function(event) {
 
-        entries.forEach(entry => {
+            const targetId = this.getAttribute("href");
 
-            if (entry.isIntersecting) {
+            if (targetId === "#") return;
 
-                entry.target.classList.add("visible");
+            const target = document.querySelector(targetId);
 
-                revealObserver.unobserve(entry.target);
+            if (target) {
+                event.preventDefault();
 
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
             }
-
         });
 
-    }, {
-        threshold: 0.12
-    });
-
-    revealElements.forEach(element => {
-        revealObserver.observe(element);
     });
 
 
-    /* =================================================
-       BOTÃO VOLTAR AO TOPO
-    ================================================= */
+    // ========================================
+    // BOTÃO VOLTAR AO TOPO
+    // ========================================
 
     const backToTop = document.getElementById("backToTop");
 
@@ -82,151 +75,83 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     backToTop.addEventListener("click", () => {
-
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
-
     });
 
 
-    /* =================================================
-       CARDS INTERATIVOS DE ALIMENTAÇÃO
-    ================================================= */
+    // ========================================
+    // ANIMAÇÕES AO APARECER NA TELA
+    // ========================================
 
-    const cardToggles = document.querySelectorAll(".card-toggle");
+    const elementsToReveal = document.querySelectorAll(
+        ".section-heading, .planet-overview, .habitat-layout, " +
+        ".food-card, .suit-layout, .conclusion-content"
+    );
 
-    cardToggles.forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            const extraContent = button.nextElementSibling;
-
-            const isOpen = extraContent.classList.toggle("open");
-
-            button.classList.toggle("open");
-
-            button.setAttribute("aria-expanded", isOpen);
-
-            button.querySelector("span").textContent = isOpen ? "−" : "+";
-
-        });
-
+    elementsToReveal.forEach(element => {
+        element.classList.add("reveal");
     });
 
+    const revealObserver = new IntersectionObserver((entries) => {
 
-    /* =================================================
-       SIMULADOR DE ROTINA EM MARTE
-    ================================================= */
+        entries.forEach(entry => {
 
-    const timelineItems = document.querySelectorAll(".timeline-item");
-
-    const plannerIcon = document.getElementById("plannerIcon");
-    const plannerTime = document.getElementById("plannerTime");
-    const plannerTitle = document.getElementById("plannerTitle");
-    const plannerDescription = document.getElementById("plannerDescription");
-
-    const routineData = {
-
-        "08:00": {
-            icon: "◉",
-            title: "Acordar na base",
-            description: "Começar o dia em um ambiente pressurizado, seguro e preparado para a rotina marciana."
-        },
-
-        "10:00": {
-            icon: "▣",
-            title: "Trabalhar e pesquisar",
-            description: "Realizar pesquisas científicas, cuidar dos sistemas da base e estudar o ambiente."
-        },
-
-        "13:00": {
-            icon: "◇",
-            title: "Alimentar-se",
-            description: "Fazer uma refeição preparada com alimentos armazenados ou produzidos em estufas."
-        },
-
-        "15:00": {
-            icon: "✦",
-            title: "Explorar o planeta",
-            description: "Utilizar um traje espacial para realizar atividades externas com segurança."
-        },
-
-        "20:00": {
-            icon: "≈",
-            title: "Descansar",
-            description: "Retornar à habitação, realizar a manutenção dos equipamentos e descansar."
-        }
-
-    };
-
-    timelineItems.forEach(item => {
-
-        item.addEventListener("click", () => {
-
-            timelineItems.forEach(otherItem => {
-                otherItem.classList.remove("active");
-            });
-
-            item.classList.add("active");
-
-            const selectedTime = item.dataset.time;
-            const data = routineData[selectedTime];
-
-            plannerIcon.textContent = data.icon;
-            plannerTime.textContent = selectedTime;
-            plannerTitle.textContent = data.title;
-            plannerDescription.textContent = data.description;
-
-        });
-
-    });
-
-
-    /* =================================================
-       ROLAGEM SUAVE PARA LINKS INTERNOS
-    ================================================= */
-
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-        link.addEventListener("click", event => {
-
-            const targetId = link.getAttribute("href");
-
-            if (targetId === "#") return;
-
-            const target = document.querySelector(targetId);
-
-            if (target) {
-
-                event.preventDefault();
-
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                revealObserver.unobserve(entry.target);
             }
 
         });
 
+    }, {
+        threshold: 0.1
+    });
+
+    elementsToReveal.forEach(element => {
+        revealObserver.observe(element);
     });
 
 
-    /* =================================================
-       EFEITO PARALLAX SUAVE NO PLANETA
-    ================================================= */
+    // ========================================
+    // EXPANSÃO DE INFORMAÇÕES
+    // ========================================
+
+    const detailsButton = document.querySelector(".details-btn");
+    const expandable = document.getElementById("habitatDetails");
+
+    if (detailsButton && expandable) {
+
+        detailsButton.addEventListener("click", () => {
+
+            const isOpen = expandable.classList.toggle("open");
+
+            detailsButton.querySelector("span").textContent =
+                isOpen ? "−" : "+";
+
+            detailsButton.childNodes[0].textContent =
+                isOpen
+                    ? " Ocultar detalhes "
+                    : " Ver detalhes da construção ";
+
+        });
+
+    }
+
+
+    // ========================================
+    // EFEITO PARALLAX SUAVE NO PLANETA
+    // ========================================
 
     const planet = document.querySelector(".planet");
 
     window.addEventListener("scroll", () => {
 
-        if (!planet) return;
+        if (planet && window.innerWidth > 900) {
 
-        const scrollPosition = window.scrollY;
-
-        if (scrollPosition < window.innerHeight) {
+            const scrollPosition = window.scrollY;
 
             planet.style.transform =
                 `translateY(${scrollPosition * 0.05}px)`;
@@ -236,20 +161,40 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =================================================
-       ACESSIBILIDADE: TECLA ESC FECHA MENU
-    ================================================= */
+    // ========================================
+    // DESTAQUE DO MENU CONFORME A SEÇÃO
+    // ========================================
 
-    document.addEventListener("keydown", event => {
+    const sections = document.querySelectorAll("section[id]");
 
-        if (event.key === "Escape") {
+    const sectionObserver = new IntersectionObserver((entries) => {
 
-            nav.classList.remove("active");
-            menuToggle.classList.remove("active");
-            menuToggle.setAttribute("aria-expanded", "false");
+        entries.forEach(entry => {
 
-        }
+            if (entry.isIntersecting) {
 
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                });
+
+                const activeLink = document.querySelector(
+                    `.nav-menu a[href="#${entry.target.id}"]`
+                );
+
+                if (activeLink) {
+                    activeLink.classList.add("active");
+                }
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.35
+    });
+
+    sections.forEach(section => {
+        sectionObserver.observe(section);
     });
 
 });
