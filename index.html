@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Descubra como seria a vida humana em Marte.">
-    <title>MARTE | Um Novo Lar</title>
+    <title>Marte: Um Novo Lar</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- CABEÇALHO -->
@@ -15,475 +16,815 @@
         <div class="container nav-container">
 
             <a href="#inicio" class="logo">
-                <span class="logo-icon">◉</span>
-                MARTE<span>:</span> UM NOVO LAR
+                <span class="logo-symbol">◉</span>
+                <span>MARTE<span class="logo-accent">.</span></span>
             </a>
 
             <button class="menu-toggle" id="menuToggle"
-                    aria-label="Abrir menu"
-                    aria-expanded="false">
+                aria-label="Abrir menu"
+                aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <nav class="nav-menu" id="navMenu">
-                <a href="#planeta">Visão Geral</a>
+            <nav class="nav" id="nav">
+                <a href="#inicio">Início</a>
+                <a href="#planeta">O Planeta</a>
                 <a href="#habitacao">Habitação</a>
                 <a href="#alimentacao">Alimentação</a>
                 <a href="#vestuario">Vestuário</a>
+                <a href="#exploracao">Exploração</a>
             </nav>
 
         </div>
     </header>
 
-    <!-- HERO -->
-    <main>
-        <section class="hero" id="inicio">
-            <div class="hero-content container">
 
-                <div class="hero-text">
-                    <p class="eyebrow">PROJETO DE EXPLORAÇÃO ESPACIAL</p>
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="inicio">
+
+            <div class="hero-stars"></div>
+
+            <div class="container hero-content">
+
+                <div class="hero-text reveal">
+
+                    <div class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        PROJETO DE EXPLORAÇÃO ESPACIAL
+                    </div>
 
                     <h1>
                         UM NOVO LAR<br>
-                        <span>NO PLANETA VERMELHO</span>
+                        <span>NO PLANETA VERMELHO.</span>
                     </h1>
 
                     <p class="hero-description">
-                        Descubra como a humanidade poderia viver,
-                        morar e construir um futuro em Marte.
+                        Como seria construir uma nova vida em Marte?
+                        Explore as possibilidades de moradia, alimentação
+                        e vestuário para os futuros habitantes do planeta.
                     </p>
 
                     <div class="hero-buttons">
                         <a href="#planeta" class="btn btn-primary">
-                            Explorar Marte <span>↓</span>
+                            Explorar Marte <span>→</span>
                         </a>
 
                         <a href="#habitacao" class="btn btn-outline">
-                            Conhecer o projeto
+                            Descobrir mais
                         </a>
                     </div>
+
+                    <div class="hero-stats">
+                        <div>
+                            <strong>4º</strong>
+                            <span>Planeta do<br>Sistema Solar</span>
+                        </div>
+
+                        <div>
+                            <strong>24h37</strong>
+                            <span>Duração aproximada<br>de um dia marciano</span>
+                        </div>
+
+                        <div>
+                            <strong>-63°C</strong>
+                            <span>Temperatura média<br>aproximada</span>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="hero-planet">
-                    <div class="planet-glow"></div>
-                    <div class="planet">
-                        <img
-                            src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?auto=format&fit=crop&w=900&q=85"
-                            alt="Superfície avermelhada de Marte"
-                        >
-                    </div>
+                <div class="hero-visual reveal">
+
                     <div class="orbit orbit-one"></div>
                     <div class="orbit orbit-two"></div>
+
+                    <div class="planet-glow"></div>
+
+                    <div class="planet">
+                        <div class="planet-crater crater-one"></div>
+                        <div class="planet-crater crater-two"></div>
+                        <div class="planet-crater crater-three"></div>
+                        <div class="planet-crater crater-four"></div>
+                        <div class="planet-crater crater-five"></div>
+                    </div>
+
+                    <div class="planet-label">
+                        <span class="label-dot"></span>
+                        MARTE / 04
+                    </div>
+
+                    <div class="floating-card card-top">
+                        <span class="mini-icon">◈</span>
+                        <div>
+                            <strong>ATMOSFERA</strong>
+                            <small>Principalmente CO₂</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-card card-bottom">
+                        <span class="mini-icon">⌁</span>
+                        <div>
+                            <strong>EXPLORAÇÃO</strong>
+                            <small>Um futuro possível</small>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
 
-            <div class="hero-bottom container">
-                <span>SCROLL PARA EXPLORAR</span>
-                <span class="scroll-line"></span>
-                <span>01 / 04</span>
+            <div class="scroll-indicator">
+                <span></span>
+                ROLE PARA EXPLORAR
             </div>
+
         </section>
 
+
         <!-- VISÃO GERAL -->
-        <section class="section" id="planeta">
+        <section class="section overview-section" id="planeta">
+
             <div class="container">
 
-                <div class="section-heading">
-                    <div>
-                        <p class="section-number">01 — VISÃO GERAL</p>
-                        <h2>CONHEÇA<br><span>MARTE</span></h2>
+                <div class="section-heading reveal">
+                    <div class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        01 / VISÃO GERAL
                     </div>
 
-                    <p class="section-intro">
-                        Um planeta de paisagens impressionantes,
-                        temperaturas extremas e grandes desafios
-                        para a vida humana.
+                    <h2>Conheça o <span>planeta vermelho.</span></h2>
+
+                    <p>
+                        Marte é um mundo de paisagens impressionantes,
+                        temperaturas extremas e grandes desafios para
+                        a vida humana.
                     </p>
                 </div>
 
-                <div class="planet-overview">
+                <div class="overview-grid">
 
-                    <div class="planet-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=1000&q=85"
-                            alt="Paisagem rochosa e avermelhada semelhante à superfície de Marte"
-                            loading="lazy"
-                        >
-                        <div class="image-label">
-                            <span class="pulse"></span>
-                            SUPERFÍCIE MARCIANA
-                        </div>
-                    </div>
+                    <div class="overview-image reveal">
 
-                    <div class="planet-info">
+                        <div class="image-placeholder mars-surface">
+                            <div class="surface-horizon"></div>
+                            <div class="surface-mountain mountain-one"></div>
+                            <div class="surface-mountain mountain-two"></div>
+                            <div class="surface-rock rock-one"></div>
+                            <div class="surface-rock rock-two"></div>
 
-                        <p class="text-muted">
-                            Marte é o quarto planeta do Sistema Solar.
-                            Sua superfície possui montanhas, crateras,
-                            vales e uma paisagem coberta por poeira
-                            avermelhada.
-                        </p>
-
-                        <div class="stats-grid">
-                            <div class="stat-card">
-                                <span class="stat-icon">🌡️</span>
-                                <strong>-63°C</strong>
-                                <small>Temperatura média</small>
+                            <div class="image-overlay">
+                                <span>SUPERFÍCIE MARCIANA</span>
+                                <strong>UM MUNDO DE<br>DESAFIOS E DESCOBERTAS.</strong>
                             </div>
-
-                            <div class="stat-card">
-                                <span class="stat-icon">🌍</span>
-                                <strong>24h 37min</strong>
-                                <small>Duração de um dia</small>
-                            </div>
-
-                            <div class="stat-card">
-                                <span class="stat-icon">⬇️</span>
-                                <strong>38%</strong>
-                                <small>Da gravidade terrestre</small>
-                            </div>
-
-                            <div class="stat-card">
-                                <span class="stat-icon">💨</span>
-                                <strong>95%</strong>
-                                <small>CO₂ na atmosfera</small>
-                            </div>
-                        </div>
-
-                        <div class="info-box">
-                            <span>✦</span>
-                            <p>
-                                <strong>Você sabia?</strong><br>
-                                Marte possui estações do ano e um dia
-                                com duração muito parecida com o da Terra.
-                            </p>
                         </div>
 
                     </div>
+
+                    <div class="overview-content reveal">
+
+                        <div class="info-card">
+                            <div class="info-icon">◉</div>
+                            <div>
+                                <h3>Paisagem</h3>
+                                <p>
+                                    Marte possui montanhas, vales, crateras
+                                    e grandes planícies cobertas por poeira.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">≈</div>
+                            <div>
+                                <h3>Clima</h3>
+                                <p>
+                                    O planeta é frio, seco e apresenta
+                                    tempestades de poeira.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">↓</div>
+                            <div>
+                                <h3>Gravidade</h3>
+                                <p>
+                                    A gravidade marciana é cerca de 38%
+                                    da gravidade da Terra.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">✦</div>
+                            <div>
+                                <h3>Atmosfera</h3>
+                                <p>
+                                    A atmosfera é muito fina e composta
+                                    principalmente por dióxido de carbono.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="planet-facts reveal">
+
+                    <div class="fact">
+                        <span class="fact-number">01</span>
+                        <div>
+                            <strong>PLANETA TERRESTRE</strong>
+                            <p>Marte possui uma superfície rochosa.</p>
+                        </div>
+                    </div>
+
+                    <div class="fact">
+                        <span class="fact-number">02</span>
+                        <div>
+                            <strong>ÁGUA CONGELADA</strong>
+                            <p>Existem reservas de gelo em regiões do planeta.</p>
+                        </div>
+                    </div>
+
+                    <div class="fact">
+                        <span class="fact-number">03</span>
+                        <div>
+                            <strong>ANO MARCIANO</strong>
+                            <p>Um ano em Marte dura aproximadamente 687 dias terrestres.</p>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
+
         </section>
 
+
         <!-- HABITAÇÃO -->
-        <section class="section section-dark" id="habitacao">
+        <section class="section dark-section" id="habitacao">
+
             <div class="container">
 
-                <div class="section-heading">
-                    <div>
-                        <p class="section-number">02 — HABITAÇÃO</p>
-                        <h2>CASAS PARA<br><span>SOBREVIVER</span></h2>
+                <div class="section-heading reveal">
+                    <div class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        02 / HABITAÇÃO
                     </div>
 
-                    <p class="section-intro">
-                        Construções planejadas para proteger
-                        os habitantes da radiação, do frio
-                        e da atmosfera extremamente fina.
+                    <h2>Casas para <span>sobreviver.</span></h2>
+
+                    <p>
+                        As habitações marcianas precisariam proteger
+                        seus moradores de um ambiente extremamente hostil.
                     </p>
                 </div>
 
                 <div class="habitat-layout">
 
-                    <div class="habitat-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1000&q=85"
-                            alt="Ilustração de uma possível base humana em Marte"
-                            loading="lazy"
-                        >
-                        <div class="image-caption">
-                            BASE MARCIANA — CONCEITO FUTURISTA
+                    <div class="habitat-visual reveal">
+
+                        <div class="habitat-scene">
+
+                            <div class="habitat-sky"></div>
+                            <div class="habitat-ground"></div>
+
+                            <div class="habitat-dome">
+                                <div class="dome-glass"></div>
+                                <div class="dome-frame frame-one"></div>
+                                <div class="dome-frame frame-two"></div>
+                                <div class="dome-frame frame-three"></div>
+
+                                <div class="dome-floor"></div>
+
+                                <div class="dome-room room-one"></div>
+                                <div class="dome-room room-two"></div>
+                                <div class="dome-room room-three"></div>
+                            </div>
+
+                            <div class="habitat-tower">
+                                <div class="tower-window window-one"></div>
+                                <div class="tower-window window-two"></div>
+                                <div class="tower-window window-three"></div>
+                                <div class="tower-top"></div>
+                            </div>
+
+                            <div class="habitat-path"></div>
+
+                            <div class="habitat-plant plant-one"></div>
+                            <div class="habitat-plant plant-two"></div>
+
                         </div>
+
+                        <div class="visual-caption">
+                            <span>CONCEITO DE HABITAÇÃO</span>
+                            <strong>BASE MARCIANA 01</strong>
+                        </div>
+
                     </div>
 
-                    <div class="habitat-content">
+                    <div class="habitat-content reveal">
 
-                        <p class="text-muted">
-                            As casas marcianas precisariam ser ambientes
-                            pressurizados, com temperatura controlada
-                            e sistemas capazes de fornecer água,
-                            energia e oxigênio.
-                        </p>
+                        <div class="content-intro">
+                            <span class="content-number">01</span>
+                            <div>
+                                <h3>Proteção acima de tudo.</h3>
+                                <p>
+                                    Uma casa em Marte não seria apenas
+                                    um lugar para morar. Ela precisaria
+                                    funcionar como um sistema de proteção
+                                    e sobrevivência.
+                                </p>
+                            </div>
+                        </div>
 
                         <div class="feature-list">
 
                             <div class="feature-item">
-                                <div class="feature-icon">🛡️</div>
+                                <span class="feature-icon">▣</span>
                                 <div>
-                                    <h3>Proteção contra radiação</h3>
+                                    <h4>Proteção contra radiação</h4>
                                     <p>
-                                        As estruturas poderiam ser cobertas
-                                        com materiais resistentes ou
-                                        construídas parcialmente abaixo
-                                        do solo.
+                                        Estruturas cobertas com materiais
+                                        resistentes ou construídas sob o solo.
                                     </p>
                                 </div>
                             </div>
 
                             <div class="feature-item">
-                                <div class="feature-icon">🏠</div>
+                                <span class="feature-icon">◇</span>
                                 <div>
-                                    <h3>Ambientes pressurizados</h3>
+                                    <h4>Temperatura controlada</h4>
                                     <p>
-                                        O interior precisaria manter
-                                        condições adequadas de pressão,
-                                        temperatura e oxigênio.
+                                        Sistemas de aquecimento e isolamento
+                                        para manter os ambientes habitáveis.
                                     </p>
                                 </div>
                             </div>
 
                             <div class="feature-item">
-                                <div class="feature-icon">⚡</div>
+                                <span class="feature-icon">⌁</span>
                                 <div>
-                                    <h3>Energia e recursos</h3>
+                                    <h4>Energia e recursos</h4>
                                     <p>
-                                        Painéis solares, sistemas de
-                                        armazenamento e reciclagem de
-                                        água seriam essenciais.
+                                        Painéis solares, armazenamento de energia
+                                        e sistemas de reciclagem de água e ar.
                                     </p>
                                 </div>
                             </div>
 
                         </div>
 
-                        <button class="btn btn-primary details-btn"
-                                data-target="habitatDetails">
-                            Ver detalhes da construção <span>+</span>
-                        </button>
-
-                        <div class="expandable" id="habitatDetails">
-                            <p>
-                                Uma possibilidade estudada é utilizar
-                                o solo marciano como proteção adicional.
-                                As casas também poderiam ser conectadas
-                                por túneis pressurizados, permitindo que
-                                os moradores circulassem com mais segurança.
-                            </p>
+                        <div class="habitat-tags">
+                            <span>ISOLAMENTO</span>
+                            <span>ENERGIA SOLAR</span>
+                            <span>RECICLAGEM</span>
                         </div>
 
                     </div>
+
                 </div>
 
             </div>
+
         </section>
+
 
         <!-- ALIMENTAÇÃO -->
-        <section class="section" id="alimentacao">
+        <section class="section food-section" id="alimentacao">
+
             <div class="container">
 
-                <div class="section-heading">
-                    <div>
-                        <p class="section-number">03 — ALIMENTAÇÃO</p>
-                        <h2>COMIDA<br><span>DO FUTURO</span></h2>
+                <div class="section-heading reveal">
+                    <div class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        03 / ALIMENTAÇÃO
                     </div>
 
-                    <p class="section-intro">
-                        Em Marte, produzir alimentos seria fundamental
-                        para reduzir a dependência de suprimentos
-                        enviados da Terra.
+                    <h2>Comida que <span>vem do futuro.</span></h2>
+
+                    <p>
+                        Produzir alimentos em Marte seria essencial
+                        para diminuir a dependência de suprimentos da Terra.
                     </p>
                 </div>
 
-                <div class="food-grid">
+                <div class="food-intro reveal">
 
-                    <article class="food-card">
-                        <div class="food-image">
-                            <img
-                                src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=700&q=85"
-                                alt="Plantas cultivadas em ambiente controlado"
-                                loading="lazy"
-                            >
-                            <span class="food-number">01</span>
+                    <div class="food-intro-text">
+                        <span class="content-number">02</span>
+                        <div>
+                            <h3>Plantar, cultivar e alimentar.</h3>
+                            <p>
+                                Em estufas controladas, os habitantes poderiam
+                                cultivar plantas utilizando água reciclada,
+                                iluminação artificial e técnicas de agricultura
+                                adaptadas ao ambiente marciano.
+                            </p>
                         </div>
-                        <div class="food-content">
-                            <span class="card-tag">CULTIVO</span>
+                    </div>
+
+                    <div class="food-stat">
+                        <span>PRODUÇÃO LOCAL</span>
+                        <strong>MAIS<br>AUTONOMIA.</strong>
+                    </div>
+
+                </div>
+
+                <div class="food-cards">
+
+                    <article class="food-card reveal">
+                        <div class="food-card-image greenhouse">
+                            <div class="greenhouse-structure"></div>
+                            <div class="greenhouse-plant plant-a"></div>
+                            <div class="greenhouse-plant plant-b"></div>
+                            <div class="greenhouse-plant plant-c"></div>
+                            <span class="food-image-label">ESTUFAS</span>
+                        </div>
+
+                        <div class="food-card-body">
+                            <span class="card-index">01</span>
                             <h3>Estufas marcianas</h3>
                             <p>
-                                Plantas poderiam ser cultivadas
-                                em ambientes fechados, com luz,
-                                temperatura e umidade controladas.
+                                Ambientes fechados e controlados para
+                                cultivar plantas longe das condições
+                                extremas do planeta.
                             </p>
+                            <button class="card-toggle">
+                                Saiba mais <span>+</span>
+                            </button>
+                            <div class="card-extra">
+                                A temperatura, a iluminação, a umidade
+                                e os nutrientes seriam cuidadosamente
+                                controlados.
+                            </div>
                         </div>
                     </article>
 
-                    <article class="food-card">
-                        <div class="food-image">
-                            <img
-                                src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=700&q=85"
-                                alt="Alimentos e vegetais frescos"
-                                loading="lazy"
-                            >
-                            <span class="food-number">02</span>
+                    <article class="food-card reveal">
+                        <div class="food-card-image crops">
+                            <div class="crop-row row-one"></div>
+                            <div class="crop-row row-two"></div>
+                            <div class="crop-row row-three"></div>
+                            <div class="crop-row row-four"></div>
+                            <span class="food-image-label">CULTIVO</span>
                         </div>
-                        <div class="food-content">
-                            <span class="card-tag">ALIMENTOS</span>
-                            <h3>Plantas e vegetais</h3>
+
+                        <div class="food-card-body">
+                            <span class="card-index">02</span>
+                            <h3>Alimentos cultivados</h3>
                             <p>
-                                Alface, batata, tomate e outras
-                                culturas poderiam fazer parte
-                                da alimentação dos habitantes.
+                                Plantas como folhas, legumes e outras
+                                culturas poderiam fazer parte da alimentação.
                             </p>
+                            <button class="card-toggle">
+                                Saiba mais <span>+</span>
+                            </button>
+                            <div class="card-extra">
+                                O cultivo seria planejado para aproveitar
+                                espaço, água e energia de maneira eficiente.
+                            </div>
                         </div>
                     </article>
 
-                    <article class="food-card">
-                        <div class="food-image">
-                            <img
-                                src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=700&q=85"
-                                alt="Pesquisa científica em laboratório"
-                                loading="lazy"
-                            >
-                            <span class="food-number">03</span>
+                    <article class="food-card reveal">
+                        <div class="food-card-image laboratory">
+                            <div class="lab-tank tank-one"></div>
+                            <div class="lab-tank tank-two"></div>
+                            <div class="lab-light"></div>
+                            <span class="food-image-label">TECNOLOGIA</span>
                         </div>
-                        <div class="food-content">
-                            <span class="card-tag">TECNOLOGIA</span>
+
+                        <div class="food-card-body">
+                            <span class="card-index">03</span>
                             <h3>Laboratórios</h3>
                             <p>
-                                Pesquisas estudam formas de produzir
-                                alimentos e proteínas em ambientes
-                                controlados.
+                                Pesquisas poderiam desenvolver novas formas
+                                de produzir alimentos e aproveitar recursos.
                             </p>
+                            <button class="card-toggle">
+                                Saiba mais <span>+</span>
+                            </button>
+                            <div class="card-extra">
+                                A produção em ambientes controlados poderia
+                                complementar o cultivo tradicional.
+                            </div>
                         </div>
                     </article>
 
                 </div>
 
-                <div class="info-box food-tip">
-                    <span>✦</span>
-                    <p>
-                        <strong>O desafio:</strong>
-                        toda a produção precisaria utilizar recursos
-                        de forma eficiente, especialmente a água.
-                    </p>
-                </div>
-
             </div>
+
         </section>
+
 
         <!-- VESTUÁRIO -->
-        <section class="section section-dark" id="vestuario">
+        <section class="section dark-section clothing-section" id="vestuario">
+
             <div class="container">
 
-                <div class="section-heading">
-                    <div>
-                        <p class="section-number">04 — VESTUÁRIO</p>
-                        <h2>ROUPAS PARA<br><span>OUTRO MUNDO</span></h2>
+                <div class="section-heading reveal">
+                    <div class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        04 / VESTUÁRIO
                     </div>
 
-                    <p class="section-intro">
-                        Os trajes precisariam proteger o corpo
-                        e permitir que os exploradores realizassem
-                        suas atividades com segurança.
+                    <h2>Roupas para <span>outro mundo.</span></h2>
+
+                    <p>
+                        Vestir-se em Marte seria uma questão de proteção,
+                        conforto e tecnologia.
                     </p>
                 </div>
 
-                <div class="suit-layout">
+                <div class="clothing-grid">
 
-                    <div class="suit-visual">
-                        <div class="suit-circle">
-                            <span class="suit-symbol">◈</span>
-                            <span>EXPLORAÇÃO</span>
-                            <small>MARTE / 2040+</small>
-                        </div>
-                    </div>
+                    <div class="clothing-visual reveal">
 
-                    <div class="suit-content">
+                        <div class="suit-scene">
 
-                        <p class="text-muted">
-                            Fora das habitações, os seres humanos
-                            precisariam usar trajes espaciais.
-                            Dentro das bases, roupas comuns poderiam
-                            ser utilizadas em ambientes controlados.
-                        </p>
+                            <div class="suit-grid"></div>
 
-                        <div class="suit-features">
-
-                            <div class="suit-feature">
-                                <span>01</span>
-                                <div>
-                                    <h3>Trajes de exploração</h3>
-                                    <p>
-                                        Protegem contra o vácuo,
-                                        a baixa pressão e as
-                                        temperaturas extremas.
-                                    </p>
+                            <div class="suit">
+                                <div class="suit-helmet">
+                                    <div class="helmet-glass"></div>
+                                    <div class="helmet-light"></div>
                                 </div>
+
+                                <div class="suit-neck"></div>
+
+                                <div class="suit-body">
+                                    <div class="suit-panel">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+
+                                    <div class="suit-belt"></div>
+                                </div>
+
+                                <div class="suit-arm arm-left">
+                                    <div class="arm-joint"></div>
+                                </div>
+
+                                <div class="suit-arm arm-right">
+                                    <div class="arm-joint"></div>
+                                </div>
+
+                                <div class="suit-leg leg-left"></div>
+                                <div class="suit-leg leg-right"></div>
+
+                                <div class="suit-boot boot-left"></div>
+                                <div class="suit-boot boot-right"></div>
                             </div>
 
-                            <div class="suit-feature">
-                                <span>02</span>
-                                <div>
-                                    <h3>Comunicação e oxigênio</h3>
-                                    <p>
-                                        Possuem sistemas de suporte
-                                        à vida e comunicação com a base.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="suit-feature">
-                                <span>03</span>
-                                <div>
-                                    <h3>Roupas internas</h3>
-                                    <p>
-                                        Seriam confortáveis e adequadas
-                                        aos ambientes pressurizados
-                                        das habitações.
-                                    </p>
-                                </div>
+                            <div class="suit-caption">
+                                <span>TRAJE DE EXPLORAÇÃO</span>
+                                <strong>MODELO / M-01</strong>
                             </div>
 
                         </div>
 
                     </div>
+
+                    <div class="clothing-content reveal">
+
+                        <div class="content-intro">
+                            <span class="content-number">03</span>
+                            <div>
+                                <h3>Proteção em cada camada.</h3>
+                                <p>
+                                    Os trajes de exploração precisariam
+                                    proteger o corpo e permitir que os
+                                    astronautas realizassem suas tarefas.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="clothing-features">
+
+                            <div class="clothing-feature">
+                                <div class="clothing-feature-icon">◈</div>
+                                <div>
+                                    <h4>Trajes externos</h4>
+                                    <p>
+                                        Proteção contra o frio, a radiação
+                                        e a baixa pressão atmosférica.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="clothing-feature">
+                                <div class="clothing-feature-icon">⌁</div>
+                                <div>
+                                    <h4>Suporte à vida</h4>
+                                    <p>
+                                        Sistemas para fornecer oxigênio
+                                        e controlar a temperatura corporal.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="clothing-feature">
+                                <div class="clothing-feature-icon">✦</div>
+                                <div>
+                                    <h4>Roupas internas</h4>
+                                    <p>
+                                        Peças confortáveis para ambientes
+                                        pressurizados e aquecidos.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
+
         </section>
 
-        <!-- CONCLUSÃO -->
-        <section class="section conclusion">
-            <div class="container conclusion-content">
 
-                <p class="section-number">O FUTURO COMEÇA COM A IMAGINAÇÃO</p>
+        <!-- EXPLORAÇÃO INTERATIVA -->
+        <section class="section exploration-section" id="exploracao">
 
-                <h2>
-                    MARTE PODE SER<br>
-                    <span>O PRÓXIMO PASSO</span>
-                </h2>
+            <div class="container">
 
-                <p>
-                    A colonização de Marte ainda é um desafio.
-                    Mas a ciência, a tecnologia e a criatividade
-                    podem transformar possibilidades em descobertas.
-                </p>
+                <div class="section-heading reveal">
+                    <div class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        05 / EXPLORAÇÃO
+                    </div>
 
-                <a href="#inicio" class="btn btn-primary">
-                    Voltar ao início ↑
-                </a>
+                    <h2>Como seria um dia <span>em Marte?</span></h2>
+
+                    <p>
+                        Imagine uma rotina construída para viver,
+                        trabalhar e explorar um novo planeta.
+                    </p>
+                </div>
+
+                <div class="day-planner reveal">
+
+                    <div class="planner-header">
+                        <div>
+                            <span class="planner-label">ROTINA MARCIANA</span>
+                            <h3>Um dia na base.</h3>
+                        </div>
+
+                        <div class="planner-status">
+                            <span class="status-dot"></span>
+                            SIMULAÇÃO ATIVA
+                        </div>
+                    </div>
+
+                    <div class="timeline">
+
+                        <button class="timeline-item active" data-time="08:00">
+                            <span class="timeline-time">08:00</span>
+                            <span class="timeline-dot"></span>
+                            <span class="timeline-title">Acordar</span>
+                        </button>
+
+                        <button class="timeline-item" data-time="10:00">
+                            <span class="timeline-time">10:00</span>
+                            <span class="timeline-dot"></span>
+                            <span class="timeline-title">Trabalhar</span>
+                        </button>
+
+                        <button class="timeline-item" data-time="13:00">
+                            <span class="timeline-time">13:00</span>
+                            <span class="timeline-dot"></span>
+                            <span class="timeline-title">Alimentar-se</span>
+                        </button>
+
+                        <button class="timeline-item" data-time="15:00">
+                            <span class="timeline-time">15:00</span>
+                            <span class="timeline-dot"></span>
+                            <span class="timeline-title">Explorar</span>
+                        </button>
+
+                        <button class="timeline-item" data-time="20:00">
+                            <span class="timeline-time">20:00</span>
+                            <span class="timeline-dot"></span>
+                            <span class="timeline-title">Descansar</span>
+                        </button>
+
+                    </div>
+
+                    <div class="planner-display">
+
+                        <div class="planner-display-icon" id="plannerIcon">◉</div>
+
+                        <div>
+                            <span class="planner-display-time" id="plannerTime">08:00</span>
+                            <h4 id="plannerTitle">Acordar na base</h4>
+                            <p id="plannerDescription">
+                                Começar o dia em um ambiente pressurizado,
+                                seguro e preparado para a rotina marciana.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
+
+        </section>
+
+
+        <!-- CONCLUSÃO -->
+        <section class="conclusion-section">
+
+            <div class="container">
+
+                <div class="conclusion-content reveal">
+
+                    <div class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        UM FUTURO POSSÍVEL
+                    </div>
+
+                    <h2>
+                        Marte ainda é um desafio.<br>
+                        <span>Mas a curiosidade nos leva além.</span>
+                    </h2>
+
+                    <p>
+                        A colonização de Marte é uma possibilidade estudada
+                        para o futuro. Antes disso, cientistas precisam
+                        desenvolver tecnologias capazes de tornar a vida
+                        humana mais segura e sustentável fora da Terra.
+                    </p>
+
+                    <a href="#inicio" class="btn btn-primary">
+                        Voltar ao início <span>↑</span>
+                    </a>
+
+                </div>
+
+            </div>
+
         </section>
 
     </main>
 
+
     <!-- RODAPÉ -->
     <footer class="footer">
-        <div class="container footer-content">
-            <div class="logo">MARTE<span>:</span> UM NOVO LAR</div>
-            <p>Projeto escolar • Exploração espacial</p>
-            <p>Desenvolvido com HTML, CSS e JavaScript</p>
+
+        <div class="container footer-container">
+
+            <div class="footer-brand">
+                <a href="#inicio" class="logo">
+                    <span class="logo-symbol">◉</span>
+                    <span>MARTE<span class="logo-accent">.</span></span>
+                </a>
+
+                <p>
+                    Um projeto educativo sobre as possibilidades
+                    da vida humana no planeta vermelho.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#planeta">O Planeta</a>
+                <a href="#habitacao">Habitação</a>
+                <a href="#alimentacao">Alimentação</a>
+                <a href="#vestuario">Vestuário</a>
+            </div>
+
+            <div class="footer-credit">
+                <span>PROJETO ESCOLAR</span>
+                <strong>EXPLORANDO O FUTURO</strong>
+            </div>
+
         </div>
+
+        <div class="container footer-bottom">
+            <span>MARTE: UM NOVO LAR</span>
+            <span>HTML · CSS · JAVASCRIPT</span>
+        </div>
+
     </footer>
 
-    <!-- BOTÃO VOLTAR AO TOPO -->
-    <button class="back-to-top" id="backToTop"
-            aria-label="Voltar ao topo">
+
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
         ↑
     </button>
 
+
     <script src="script.js"></script>
+
 </body>
 </html>

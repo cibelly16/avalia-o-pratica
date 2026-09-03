@@ -1,66 +1,73 @@
-/* ========================================
+/* =====================================================
    MARTE: UM NOVO LAR
-   FUNCIONALIDADES JAVASCRIPT
-======================================== */
+   JAVASCRIPT PRINCIPAL
+===================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ========================================
-    // MENU RESPONSIVO
-    // ========================================
+    /* =================================================
+       MENU RESPONSIVO
+    ================================================= */
 
     const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
+    const nav = document.getElementById("nav");
 
     menuToggle.addEventListener("click", () => {
-        const isOpen = navMenu.classList.toggle("active");
+
+        const isOpen = nav.classList.toggle("active");
+
+        menuToggle.classList.toggle("active");
 
         menuToggle.setAttribute("aria-expanded", isOpen);
 
-        menuToggle.classList.toggle("active", isOpen);
     });
 
     // Fecha o menu ao clicar em um link
-    const navLinks = document.querySelectorAll(".nav-menu a");
+    document.querySelectorAll(".nav a").forEach(link => {
 
-    navLinks.forEach(link => {
         link.addEventListener("click", () => {
-            navMenu.classList.remove("active");
+
+            nav.classList.remove("active");
+            menuToggle.classList.remove("active");
             menuToggle.setAttribute("aria-expanded", "false");
+
         });
+
     });
 
 
-    // ========================================
-    // ROLAGEM SUAVE
-    // ========================================
+    /* =================================================
+       ANIMAÇÕES AO APARECER NA TELA
+    ================================================= */
 
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
+    const revealElements = document.querySelectorAll(".reveal");
 
-        link.addEventListener("click", function(event) {
+    const revealObserver = new IntersectionObserver((entries) => {
 
-            const targetId = this.getAttribute("href");
+        entries.forEach(entry => {
 
-            if (targetId === "#") return;
+            if (entry.isIntersecting) {
 
-            const target = document.querySelector(targetId);
+                entry.target.classList.add("visible");
 
-            if (target) {
-                event.preventDefault();
+                revealObserver.unobserve(entry.target);
 
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
             }
+
         });
 
+    }, {
+        threshold: 0.12
+    });
+
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
     });
 
 
-    // ========================================
-    // BOTÃO VOLTAR AO TOPO
-    // ========================================
+    /* =================================================
+       BOTÃO VOLTAR AO TOPO
+    ================================================= */
 
     const backToTop = document.getElementById("backToTop");
 
@@ -75,83 +82,151 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     backToTop.addEventListener("click", () => {
+
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
+
     });
 
 
-    // ========================================
-    // ANIMAÇÕES AO APARECER NA TELA
-    // ========================================
+    /* =================================================
+       CARDS INTERATIVOS DE ALIMENTAÇÃO
+    ================================================= */
 
-    const elementsToReveal = document.querySelectorAll(
-        ".section-heading, .planet-overview, .habitat-layout, " +
-        ".food-card, .suit-layout, .conclusion-content"
-    );
+    const cardToggles = document.querySelectorAll(".card-toggle");
 
-    elementsToReveal.forEach(element => {
-        element.classList.add("reveal");
+    cardToggles.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const extraContent = button.nextElementSibling;
+
+            const isOpen = extraContent.classList.toggle("open");
+
+            button.classList.toggle("open");
+
+            button.setAttribute("aria-expanded", isOpen);
+
+            button.querySelector("span").textContent = isOpen ? "−" : "+";
+
+        });
+
     });
 
-    const revealObserver = new IntersectionObserver((entries) => {
 
-        entries.forEach(entry => {
+    /* =================================================
+       SIMULADOR DE ROTINA EM MARTE
+    ================================================= */
 
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-                revealObserver.unobserve(entry.target);
+    const timelineItems = document.querySelectorAll(".timeline-item");
+
+    const plannerIcon = document.getElementById("plannerIcon");
+    const plannerTime = document.getElementById("plannerTime");
+    const plannerTitle = document.getElementById("plannerTitle");
+    const plannerDescription = document.getElementById("plannerDescription");
+
+    const routineData = {
+
+        "08:00": {
+            icon: "◉",
+            title: "Acordar na base",
+            description: "Começar o dia em um ambiente pressurizado, seguro e preparado para a rotina marciana."
+        },
+
+        "10:00": {
+            icon: "▣",
+            title: "Trabalhar e pesquisar",
+            description: "Realizar pesquisas científicas, cuidar dos sistemas da base e estudar o ambiente."
+        },
+
+        "13:00": {
+            icon: "◇",
+            title: "Alimentar-se",
+            description: "Fazer uma refeição preparada com alimentos armazenados ou produzidos em estufas."
+        },
+
+        "15:00": {
+            icon: "✦",
+            title: "Explorar o planeta",
+            description: "Utilizar um traje espacial para realizar atividades externas com segurança."
+        },
+
+        "20:00": {
+            icon: "≈",
+            title: "Descansar",
+            description: "Retornar à habitação, realizar a manutenção dos equipamentos e descansar."
+        }
+
+    };
+
+    timelineItems.forEach(item => {
+
+        item.addEventListener("click", () => {
+
+            timelineItems.forEach(otherItem => {
+                otherItem.classList.remove("active");
+            });
+
+            item.classList.add("active");
+
+            const selectedTime = item.dataset.time;
+            const data = routineData[selectedTime];
+
+            plannerIcon.textContent = data.icon;
+            plannerTime.textContent = selectedTime;
+            plannerTitle.textContent = data.title;
+            plannerDescription.textContent = data.description;
+
+        });
+
+    });
+
+
+    /* =================================================
+       ROLAGEM SUAVE PARA LINKS INTERNOS
+    ================================================= */
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+        link.addEventListener("click", event => {
+
+            const targetId = link.getAttribute("href");
+
+            if (targetId === "#") return;
+
+            const target = document.querySelector(targetId);
+
+            if (target) {
+
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
             }
 
         });
 
-    }, {
-        threshold: 0.1
-    });
-
-    elementsToReveal.forEach(element => {
-        revealObserver.observe(element);
     });
 
 
-    // ========================================
-    // EXPANSÃO DE INFORMAÇÕES
-    // ========================================
-
-    const detailsButton = document.querySelector(".details-btn");
-    const expandable = document.getElementById("habitatDetails");
-
-    if (detailsButton && expandable) {
-
-        detailsButton.addEventListener("click", () => {
-
-            const isOpen = expandable.classList.toggle("open");
-
-            detailsButton.querySelector("span").textContent =
-                isOpen ? "−" : "+";
-
-            detailsButton.childNodes[0].textContent =
-                isOpen
-                    ? " Ocultar detalhes "
-                    : " Ver detalhes da construção ";
-
-        });
-
-    }
-
-
-    // ========================================
-    // EFEITO PARALLAX SUAVE NO PLANETA
-    // ========================================
+    /* =================================================
+       EFEITO PARALLAX SUAVE NO PLANETA
+    ================================================= */
 
     const planet = document.querySelector(".planet");
 
     window.addEventListener("scroll", () => {
 
-        if (planet && window.innerWidth > 900) {
+        if (!planet) return;
 
-            const scrollPosition = window.scrollY;
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition < window.innerHeight) {
 
             planet.style.transform =
                 `translateY(${scrollPosition * 0.05}px)`;
@@ -161,40 +236,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // ========================================
-    // DESTAQUE DO MENU CONFORME A SEÇÃO
-    // ========================================
+    /* =================================================
+       ACESSIBILIDADE: TECLA ESC FECHA MENU
+    ================================================= */
 
-    const sections = document.querySelectorAll("section[id]");
+    document.addEventListener("keydown", event => {
 
-    const sectionObserver = new IntersectionObserver((entries) => {
+        if (event.key === "Escape") {
 
-        entries.forEach(entry => {
+            nav.classList.remove("active");
+            menuToggle.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
 
-            if (entry.isIntersecting) {
+        }
 
-                navLinks.forEach(link => {
-                    link.classList.remove("active");
-                });
-
-                const activeLink = document.querySelector(
-                    `.nav-menu a[href="#${entry.target.id}"]`
-                );
-
-                if (activeLink) {
-                    activeLink.classList.add("active");
-                }
-
-            }
-
-        });
-
-    }, {
-        threshold: 0.35
-    });
-
-    sections.forEach(section => {
-        sectionObserver.observe(section);
     });
 
 });
